@@ -19,25 +19,23 @@ module DeepEq
       message = [
         'Expected',
         current.inspect,
-        '',
-        'to be deep equal to',
+        "\nto be deep equal to",
         expected.inspect,
         '',
-        'Following errors found:'
+        "\nFollowing errors found:"
       ]
 
-      message.concat(errors).join("\n")
+      message.concat(errors).push("\r").join("\n")
     end
 
     def failure_message_when_negated
       message = [
         'Expected',
         current.inspect,
-        'not to be deep equal to',
+        "\nnot to be deep equal to",
         expected.inspect,
-        '',
-        'But equal values found.'
-      ].join("\n")
+        "\nBut equal values found."
+      ].join("\n") + "\n"
     end
 
     def add_error(error)
