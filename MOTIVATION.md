@@ -4,7 +4,7 @@ Consider such a test, comparing two hashes:
 ```ruby
 it 'compares' do
   data = {
-    chatRoom: {
+    room: {
       people: {
         admin: {
           age: 25,
